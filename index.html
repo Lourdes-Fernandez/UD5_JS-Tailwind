@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+    <link href="https://fonts.cdnfonts.com/css/trajan-pro" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="icon" type="image/png" href="favicon.PNG">
+    <style>
+        *::-webkit-scrollbar {
+            width: 2px;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: #2f75b3af;
+            border-radius: 100%;
+        }
+
+        body {
+            font-family: 'Trajan Pro', sans-serif;
+            color: #fafbf6;
+            background-image: url('bg.png');
+            text-shadow: 0 0 6px #fafbf6;
+        }
+
+
+        #loreCont {
+            text-shadow: 0 0 10px #0f0f1b;
+        }
+
+        .white-shadow {
+            box-shadow: 0 -7px 10px rgba(255, 255, 255, 0.2) inset;
+        }
+
+        .videoCont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .videoCont iframe {
+            border: 2px, solid, #fafbf6;
+        }
+
+        @media screen and (max-width: 489px) {
+            dialog {
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            .videoCont {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="p-[1rem] bg-center flex justify-center items-center bg-cover bg-no-repeat bg-fixed bg-color-[#0f0f1b] tracking-wider overflow-hidden">
+
+    <!--Container-->
+    <div id="parent" class="h-screen w-screen sm:h-[100vh] sm:max-w-[100vh]">
+
+        <div id="fondo">
+
+            <img src="Título.png" alt="titulo" class="w-full max-w-[75%] mx-auto" />
+
+            <!--Lore-->
+            <h1 class="text-3xl font-bold text-left mb-4">Lore</h1>
+
+            <div id="loreCont" class="flex flex-col mx-4 leading-6 overflow-x-hidden h-[40vh] p-2">
+                <!--Párrafos-->
+            </div>
+
+            <!--Controles para el texto-->
+            <div class="flex justify-between items-center m-4 max-w-500px">
+
+                <button id="btn-bef"
+                    class="flex-shrink p-5 text-5xl rounded font-bold disabled:cursor-not-allowed cursor-pointer">
+                    &ShortLeftArrow;
+                </button>
+
+                <button id="startBtn" class="flex-shrink bg-[#0f0f1b87] text-xl text-[#fafbf6] font-bold rounded-3xl p-4 cursor-pointer border-b-[2px] border-transparent ease-in duration-300
+        hover:border-[#fafbf690] white-shadow">
+                    Quiz!
+                </button>
+
+                <button id="btn-next"
+                    class="flex-shrink text-5xl p-5 font-bold disabled:cursor-not-allowed cursor-pointer">
+                    &ShortRightArrow;
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!--Quiz pop-up-->
+        <dialog id="quizCont" class="pt-[1rem] w-[90vh] h-[70vh] relative m-auto bg-transparent m-4">
+            <img src="decoracion.png" alt="deco"
+                class="w-[75%] absolute top-0 left-1/2 transform -translate-x-1/2 z-10">
+
+            <div
+                class="border-b border-l border-r h-full p-[2rem] border-white rounded-lg backdrop-blur-lg flex flex-col gap-2 justify-center items-center m-auto white-shadow">
+
+                <!--Puntuación-->
+                <p id="msjScore" class="text-[#fafbf68b]"></p>
+
+                <h2 id="pregunta" class="text-[#fafbf6] text-center px-4 py-2"></h2>
+
+
+                <div id="respuestas"
+                    class="w-full text-[#fafbf6] flex flex-col gap-2 p-2 overflow-y-auto overflow-x-hidden">
+
+                    <!--Respuestas-->
+
+                </div>
+
+                <button id="nextQ" class="bg-[#0f0f1b87] max-w-50px text-[#fafbf6] font-bold rounded-3xl p-4 cursor-pointer border-b-[2px] border-transparent ease-in duration-300
+          hover:border-[#fafbf690] white-shadow disabled:cursor-default disabled:border-transparent">
+                </button>
+            </div>
+
+
+        </dialog>
+
+    </div>
+
+    <!--Script-->
+    <script src=" main.js"></script>
+</body>
+
+</html>
