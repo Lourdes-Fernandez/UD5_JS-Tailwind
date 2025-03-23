@@ -199,7 +199,6 @@ let score = 0;
 function empezarQuiz() {
     pos = 0;
     score = 0;
-    fondo.style.opacity = 0.1;
     quizCont.showModal();
     ans.classList.remove("hidden");
     pregunta.classList.remove("text-4xl")
@@ -279,7 +278,6 @@ function selecRespuesta(e) {
 // Salir del quiz
 function salirQuiz() {
     quizCont.close();
-    fondo.style.opacity = 1;
     comenzarHistoria();
 }
 
