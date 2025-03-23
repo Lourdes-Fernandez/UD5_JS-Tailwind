@@ -314,3 +314,5 @@ document.addEventListener("keydown", function (event) {
         event.preventDefault(); // Evita que se cierre
     }
 });
+
+quizCont.addEventListener("cancel", (event) => event.preventDefault());
